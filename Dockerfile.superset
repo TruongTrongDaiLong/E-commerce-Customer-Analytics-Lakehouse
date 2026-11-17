@@ -1,0 +1,8 @@
+FROM apache/superset:3.1.0
+
+USER root
+# Cài đặt driver Dremio
+RUN pip install sqlalchemy_dremio
+RUN pip install "SQLAlchemy<2.0" "alembic<1.11" "pyarrow>=14,<15"
+
+USER superset
